@@ -6,6 +6,7 @@ import { IoIosMenu } from "react-icons/io";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { LiaTimesSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
 
 
 
@@ -33,10 +34,24 @@ const Navbar = () => {
         <div className="flex gap-6 items-center font-bold">
           <img className=" w-40" src={Logo} alt=""/>
            <ul className="lg:flex gap-10 hidden">
-            <li className="hover:text-blue-500 cursor-pointer">Product</li>
-            <li className="hover:text-blue-500 cursor-pointer">Pricing</li>
-            <li className="hover:text-blue-500 cursor-pointer">Resources</li>
-            <li className="hover:text-blue-500 cursor-pointer">Book a demo</li>
+            <Link to="/product">
+             <li className="hover:text-blue-500 cursor-pointer">Product</li>
+            </Link>
+
+            <Link to="/about">
+               <li className="hover:text-blue-500 cursor-pointer">About</li>
+            </Link>
+            
+            <Link to="/post">
+              <li className="hover:text-blue-500 cursor-pointer">Post</li>   
+            </Link>
+
+            {/* <li className="hover:text-blue-500 cursor-pointer">Resources</li> */}
+
+            <Link to="/todo">
+              <li className="hover:text-blue-500 cursor-pointer">To-App</li> 
+            </Link>
+            
            </ul>
            
         </div>
@@ -50,9 +65,11 @@ const Navbar = () => {
             Log in
           </button>
           )} 
-           <button className="lg:block hidden border-2 border-blue-500 px-3 py-1 rounded-xl bg-[#00A2FF] text-white  hover:bg-white hover:text-[#00A2FF] cursor-pointer">
-            Signup free
-          </button>
+            <Link to="/login">
+            <button className="lg:block hidden border-2 border-blue-500 px-3 py-1 rounded-xl bg-[#00A2FF] text-white  hover:bg-white hover:text-[#00A2FF] cursor-pointer">
+              Signup free
+            </button>
+            </Link>
          { mobilenav ? (
           <LiaTimesSolid 
             className="lg:hidden block text-3xl z-50" 
@@ -75,8 +92,13 @@ const Navbar = () => {
           data-aos-duration="1000"
         >
       <ul className="space-y-6  ">
-        <li className="hover:text-blue-500 cursor-pointer">Product</li>
-        <li className="hover:text-blue-500 cursor-pointer">Pricing</li>
+        <Link to="/product">
+         <li className="hover:text-blue-500 cursor-pointer">Product</li>
+        </Link>
+        <Link to="/about">
+         <li className="hover:text-blue-500 cursor-pointer">About</li>
+        </Link>
+
         <li className="hover:text-blue-500 cursor-pointer">Resources</li>
         <li className="hover:text-blue-500 cursor-pointer">Book a demo</li>
       </ul>
